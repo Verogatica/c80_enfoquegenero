@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfoque de género en la constitucion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="contenedor1">
+          <div class="encabezado">
+            <h1 class="titular">Enfoque de género una deuda en la constitución</h1>
+            <p>En 2020 con una amplia mayoría se aprobó la escritura de una nueva constitución, así también se aprobó que esta fuera escrita por una convención constitucional paritaria. La propuesta de nueva constitución 2022 fue celebrada por distintos sectores de la sociedad, por una parte debido a que había sido escrito por un órgano paritario, algo inédito en la historia de Chile y el mundo y por otra se hacía cargo de temáticas que iban en directo beneficio de las mujeres. Sin embargo, en 2022 se rechazó esta propuesta con el 61.89% de los votos válidamente emitidos. Hoy en 2023 nuevamente se abre una oportunidad para escribir una nueva constitución ¿Qué pasará con todo lo avanzado? ¿Cuáles son las temáticas más relevantes que no deberían faltar en esta nueva propuesta 2023? Acá hacemos un barrido por algunas dimensiones que deberían incorporarse, pero antes hacemos un diagnóstico de la constitución que rige actualmente  (1980) y la importancia del enfoque de género en la nueva constitución. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenedor">
+        <h2>Si tan solo contabilizamos algunos de los términos, principios y/o derechos que consideramos clave para avanzar hacia la igualdad de género.</h2>
+        
+        <div class="selector">
+          <select id="slctPalabra">
+         </select>
+        </div>
+        <div class="cont">
+        <p>En la constitución de <span class="constitucion">1980</span> la palabra <span id="nombre"></span> aparece <span id="result"></span></p>
+        <h2>En la constitución 2023 ¿cuántas veces aparecerán estás palabras?, pero ¿Por qué es importante que aparezcan?</h2>
+        </div>
+    </div>
+       
+    <script>
+        const palabras = [
+            { name: "derechos", vez: 28 },
+            { name: "derecho", vez: 76 },
+            { name: "familia", vez: 3 },
+            { name: "familias", vez: 0 },
+            { name: "género", vez: 1 },
+            { name: "hombre", vez: 0 },
+            { name: "hombres", vez: 7 },
+            { name: "mujer", vez: 0 },
+            { name: "mujeres", vez: 1 },
+            { name: "niña", vez: 0 },
+            { name: "niñas", vez: 0 },
+            { name: "niño", vez: 0 },
+            { name: "niños", vez: 0 },
+            { name: "niñez", vez: 0 },
+            { name: "sexo", vez: 13 },
+            { name: "sexos", vez: 2 },
+            { name: "persona", vez: 31 },
+            { name: "personas", vez: 48 },
+            { name: "senador", vez: 21 },
+            { name: "senadora", vez: 0 },
+            { name: "diputado", vez: 25 },
+            { name: "diputada", vez: 0 },
+            { name: "ministro", vez: 28 },
+            { name: "ministra", vez: 0 },
+            { name: "ministros", vez: 41 },
+            { name: "presidente", vez: 183 },
+            { name: "presidenta", vez: 0 }
+        ];
+        
+        const slctPalabra = document.getElementById("slctPalabra");
+        const result = document.getElementById("result");
+        const nombre = document.getElementById("nombre");
+    
+        palabras.forEach((palabra) => {
+            let o = document.createElement("option");
+            o.text = palabra.name;
+            o.value = palabra.vez;
+            slctPalabra.appendChild(o);
+        });
+    
+        slctPalabra.selectedIndex = 7; 
+        nombre.innerText = palabras[7].name; 
+        result.innerText = palabras[7].vez + (palabras[7].vez === 1 ? " vez" : " veces"); 
+
+        slctPalabra.onchange = function() {
+            if (slctPalabra.value === "") {
+                result.innerText = ""; 
+                nombre.innerText = palabras[slctPalabra.selectedIndex - 1].name; 
+            } else {
+                if (slctPalabra.value === "1") {
+                    result.innerText = slctPalabra.value + " vez";
+                } else {
+                    result.innerText = slctPalabra.value + " veces";
+                }
+                nombre.innerText = palabras[slctPalabra.selectedIndex].name; 
+            }
+        };
+    </script>
+
+    
+    <div class="contenedor">
+        <h1 class="titulares">Enfoque de género en la constitución</h1>
+        <p>Las mujeres históricamente han sido excluidas de la vida social y política Recién en 1934 se aprobó el voto femenino para las elecciones municipales, y recién en 1949 se concedió el derecho a voto a las mujeres para las elecciones presidenciales y parlamentarias (Memoria Chilena, s.f.).  De todas formas siguen existiendo constantes obstáculos para la participación política de las mujeres. 
+        <br>El enfoque de género es fundamental para redactar la constitución, pues con esta se reconoce las desigualdades de poder e inequidades existentes y con ello aquello que deja a las mujeres fuera de la participación política.</p>
+    </div>  
+
+    <div class="contenedor">
+        <h1 class="titulares">¿Por qué es importante buscar la igualdad de género en la nueva constitución?</h1>
+        <p>Transversalizar la perspectiva de género es  dar cuenta de las implicaciones que tiene para los hombres y para las mujeres cualquier acción que se planifique, ya se trate de legislación, políticas o programas, en todas las áreas y en todos los niveles. Es una estrategia para conseguir que las preocupaciones y experiencias de todas las personas, sean parte fundamental de estas, evitando así perpetuar las desigualdades de género.</p>
+        <p>Las constituciones toman la forma en la que se quiere y proyecta una sociedad y generan un impacto directo en los hombres y mujeres que conforman las sociedades. Mediante la inclusión del enfoque de género y la inclusión formal de las mujeres en los distintos ámbitos de la sociedad . Las constituciones con enfoque de género consideran dimensiones específicas pertinentes para lograr una sociedad más justa e igualitaria, además de lenguaje inclusivo y no sexista para evitar estereotipos que refuercen desigualdades existentes.  (ONU Mujeres, 2023 y ECOSOC, 1997)</p>
+    </div>
+
+    <div class="contenedor">
+        <h1 class="titulares">¿Qué dimensiones deberían ser incorporadas en la nueva propuesta constitucional?</h1>
+        <h1 class="titularazul">Enfoque de cuidados y corresponsabilidad</h1>
+        <p>Que el derecho al cuidado sea reconocido en nuestro catálogo de derechos fundamentales permite reconocer la centralidad de los cuidados en la vida de todos y todas, y establecer un mandato claro para que el Estado garantice a las personas prestaciones y facilidades para cuidar a otras, así como el contexto adecuado para asegurar el propio bienestar (Ciper, 2022).</p>
+        <h3>¿Por qué incorporarla?</h3>
+        <p>El derecho al cuidado es el derecho que tienen todas las personas a ser cuidadas, al autocuidado y a cuidar. Permite atender al bienestar de las personas y es fundamental para asegurar una vida digna. Implica que todas las personas, en uno o varios momentos del ciclo de vida, necesitamos de cuidado y debemos proveerlo. Para garantizar que los cuidados se lleven a cabo idóneamente, toda la sociedad debe ser y sentirse corresponsable. Por lo que, el primer paso para lograr la corresponsabilidad social de los cuidados es promover una distribución equitativa de estas tareas entre mujeres y hombres (ComunidadMujer, 2021).</p>
+        <hr class="divisor">
+        <h1 class="titular2"> Promedio de horas durante un día habitual que se dedican al cuidado de niños(as), de personas dependientes o enfermas en el hogar</h1>
+        <h1 class="titular3">Mientras las mujeres dedican 3,2 horas al día en promedio</h1>
+        <img src="img/reloj1.png" alt="3,2hrs">
+        <h1 class="titular3">Los hombres dedican 1,5 horas</h1>
+        <img src="img/reloj2.png" alt="1,5hrs" class="imgpeq">
+        <p class="fuentes">Fuente: Encuesta de Bienestar Social, 2021</p>
+
+        <h1 class="titularazul">Derechos sexuales y reproductivos</h1>
+        <p>"Los derechos sexuales y reproductivos son aquellos que permiten a todas las personas, sin discriminación ni violencia o coerción, ejercer plenamente su sexualidad como fuente de desarrollo personal y decidir autónomamente sobre la sexualidad y reproducción, contando para ello con la información, los medios y servicios que así lo permitan" (Humanas, 2016) Fuente: https://www.humanas.cl/wp-content/uploads/2016/08/Booklet-NC-DDSSRR.pdf</p>
+        <h3>¿Por qué incorporarla?</h3>
+        <p>Este derecho implica la facultad de decidir libre y responsablemente si tener o no relaciones sexuales, de tenerlas en forma segura, de protegerse de embarazos no deseados y de enfermedades de transmisión sexual. Asimismo, la facultad de decidir si se quiere tener hijos, el número de estos; a disponer de la información y de los medios para ello; a contar con las condiciones para que los procesos reproductivos y la atención del parto sea conforme a las cosmovisiones y las convicciones de las mujeres; y a alcanzar el nivel más elevado de salud sexual y reproductiva (Instituto Igualdad, 2021)</p>
+        <h1 class="aborto"> <span class="numero-grande">937</span> Abortos bajo las tres causales en 2023.</p></h1>
+        <img src="img/pañuelos.png" alt="937pañuelos">
+        <p class="fuentes">Fuente: DEIS (2023). Ministerio de Salud. Reporte Ley 21.030</p>
+
+        <h1 class="titularazul">Violencia de Género</h1>
+        <p>Por violencia de género entendemos los actos de violencia que tienen como principal motivo el pertenecer a un género, cuyas consecuencias son físicas, sexuales y/o psicológicas. Comúnmente, hablar de violencia de género es sinónimo de violencia contra la mujer, quedando patente la desigualdad de las relaciones de poder entre hombres y mujeres, constituyendo también un mecanismo de control por parte de los primeros (Juntas en Acción, 2021).</p>
+        <h3>¿Por qué incorporarla?</h3>
+        <p>El reconocimiento permite mandatar al Estado el adoptar las medidas necesarias para erradicar todo tipo de violencia de género y los patrones socioculturales que la posibilitan, actuando con la debida diligencia para prevenirla, investigarla y sancionarla, así como brindar atención, protección y reparación integral a las víctimas, considerando especialmente las situaciones de vulnerabilidad en que puedan hallarse.</p>
+        <h1 class="violenciagenero"> <span class="numero-grande">784</span>Femicidios entre 2010-2022</p></h1>
+        <img src="img/zapatos.png" alt="784zapatos">
+        <p class="fuentes">Fuente: Registro femicidios (Red chilena contra la violencia hacia las mujeres, 2010-2022)</p>
+
+        <h1 class="titularazul">Diversidades Sexuales</h1>
+        <p>La diversidad sexual hace referencia a las diferentes formas de expresar el afecto, erotismo, deseo, las prácticas amorosas y sexuales entre las personas. Es decir,la conforman toda la gama de identidades de género y orientaciones sexuales que forma parte de la vida cotidiana de los seres humanos (Ministerio del Trabajo y Previsión Social). <a> https://www.ips.gob.cl/servlet/internet/archivo/1421809741347/cartilla_div_sexual_agosto2018.pdf </a> </p>
+        <h3>¿Por qué incorporarla?</h3>
+        <p>En el caso de la C80, esta en ningún caso hace referencia al concepto ni a un equivalente de este (Radio JGM). Se hace fundamental resguardar los derechos de la comunidad LGBTIQ, algo que históricamente ha estado en deuda. A su vez se hace importante para erradicar los hechos de odio a los que la comunidad se ve expuesta constantemente.</p>
+        <h1 class="diversidades"> <span class="numero-grande">53</span>Crímenes de odio en Chile entre 2010 y 2022</p></h1>
+        <img src="img/rosas.png" alt="53rosas">
+        <p class="fuentes">Eugenia D'Angelo, Natalia Peña Boero; Monitor de Crímenes de Odio LGTTTBIQNB+ Marielle Franco: Informe 2023 (Latinoamérica: MUNDOSUR, 2023)</p>
+    </div>
+
+   
+      
+    
+</body>
+</html>
